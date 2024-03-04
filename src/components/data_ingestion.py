@@ -1,11 +1,14 @@
 import os
 import sys
-from src.exception import CustomException
-from src.logger import logging
+from src.pipeline.exception import CustomException
+from src.pipeline.logger import logging
 import pandas as pd
 
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
+
+
+
 
 #in data ingetion component any input that is required will be given through this class
 #inside a class to define a class variable we usee init but by using this decorator dataclass we will be able to directly define the class variable, in this case class variable is train_data_path
@@ -50,5 +53,5 @@ class DataIngestion:
             )
         except Exception as e:
             raise CustomException(e,sys) 
-        
+       
         
